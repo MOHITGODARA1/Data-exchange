@@ -1,0 +1,327 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+nav {
+    background-color: #333;
+    padding: 20px 0; /* Increase padding for larger nav bar */
+    width: 100%;
+    position: sticky;
+}
+
+.nav-container {
+    display: flex;
+   
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.company-name {
+    flex: 1;
+}
+
+.company-name a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px; /* Increase font size for company name */
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align nav items to the right */
+    flex: 1; /* Take up available space */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+.container {
+    text-align: center;
+    padding: 0; /* Remove padding to eliminate gap */
+}
+
+.firstdiv {
+    background-image: url("firstdataimage.png");
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: white; 
+    padding: 50px 20px;
+    border-radius: 0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: left; 
+    width: 100%; 
+    margin: 0; 
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.firstdiv h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.firstdiv p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 600px;
+    color: white; 
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+}
+
+.about-content {
+    margin-top: -128px;
+    flex: 1;
+    padding-left: 20px; 
+}
+.heading{
+    margin-left: 60px;
+    display: flex;
+    text-align: start;
+    color: rgb(32, 31, 30);
+}
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    flex-direction: row-reverse;
+}
+.about-image {
+    flex: 1;
+    max-width: 38%;
+    height: auto;
+    border-radius: 10px;
+}
+.About{
+    font-size: 60px;
+    font-family: serif;
+}
+.content{
+    font-size: 16px;
+    line-height: 29px;
+}
+section {
+    margin: 40px 0;
+}
+
+section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+section p, section ul {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    margin-bottom: 10px;
+}
+
+section ul li strong {
+    color: #333;
+}
+
+.cta {
+    margin: 40px 0;
+}
+
+.cta p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.cta .btn {
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta .btn:hover {
+    background-color: #575757;
+}
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 36px;
+}
+.key{
+    font-size: 35px;
+    font-family: serif;
+}
+.features{
+    margin-top: 88px;
+}
+.provider{
+    font-family: serif;
+    margin-left: -637px;
+}
+.popularset{
+    margin-top: 71px;
+}
+.feature {
+    background-color: #f0e9e9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+.re{
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: black;
+    font-family: serif;
+}
+.allreview{
+    background-color: #ccdbdc;
+    height: 455px;
+}
+.reviews-container {
+    display: flex;
+    flex-wrap: nowrap; 
+    gap: 20px;
+    justify-content: center;
+    overflow-x: auto; 
+}
+.imagesection{
+    width: 100%;
+    margin-top: 40px;
+}
+.recontent{
+    font-size: 16px;
+
+}
+.logo{
+    width: 251px;
+    height: 62px;
+}
+.review {
+    background-color: #efe7e7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px; 
+    min-height: 300px; 
+    text-align: center;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.review-image{
+    width: 85px;
+    height: 89px;
+    border-radius: 50%;
+}
+.popup {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.popup.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.sers-api{
+    margin-left: -520px;
+}
+.freedata{
+    background-color: #f9eeee;
+    margin-left: 194px;
+    margin-right: 164px;
+    height: 630px;
+}
+.set{
+    margin-left: -850px;
+    margin-top: 29px;
+    padding-top: 26px;
+}
+hr{
+    height: 3px;
+    color: rgb(73, 112, 179);
+    background-color: rgb(73, 112, 179);
+    width: 90%;
+    margin-top: 35px;
+}
+.freecontent{
+    text-align: start;
+    margin-left: 57px;
+}
+.AWSdataset{
+    margin-left: -369px;
+}
+.firstset{
+    background-color: #fefeff;
+    height: 345px;
+    width: 287px;
+}
+.datacontainor {
+    display: flex;
+    gap: 15px;
+    margin-left: 27px;
+    margin-right: 27px;
+    opacity: 0; /* Initial state for popup effect */
+    transform: translateY(50px); /* Initial state for popup effect */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transition for popup effect */
+}
+.popup {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.popup.show {
+    opacity: 1;
+    transform: translateY(0);
+}
