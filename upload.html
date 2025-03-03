@@ -3,26 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market Databank - Upload</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Upload Page</title>
+    <link rel="stylesheet" href="uplode.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="upload.html">Upload Data</a></li>
-            <li><a href="view.html">View & Share</a></li>
-        </ul>
-    </nav>
     <div class="container">
-        <h1>Upload Market Data</h1>
-        <form>
-            <label for="title">Data Title:</label>
-            <input type="text" id="title" name="title" required>
-            <label for="file">Upload File:</label>
-            <input type="file" id="file" name="file" accept=".csv, .pdf, .txt">
-            <button type="submit">Submit</button>
+        <h1>Upload Your Data</h1>
+        <p>Allowed file types: JPG, PNG, PDF (Max size: 5MB)</p>
+        <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" id="file-input" name="file" accept=".jpg,.png,.pdf" required>
+            <button type="submit">Upload</button>
         </form>
+        <img id="preview" alt="Image Preview">
+        <div id="progress-bar"><div></div></div>
     </div>
+    
+    <script src="uplod.js"></script>
 </body>
 </html>
