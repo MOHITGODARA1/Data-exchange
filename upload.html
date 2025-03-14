@@ -6,17 +6,56 @@
     <title>Upload Page</title>
     <link rel="stylesheet" href="uplode.css">
 </head>
-<body>
-    <div class="container">
+<body class="bg-gray-100">
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="index.html">Market Databank</a>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Upload Data</a></li>
+                <li><a href="view.html">View & Share</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container content">
         <h1>Upload Your Data</h1>
-        <p>Allowed file types: JPG, PNG, PDF (Max size: 5MB)</p>
-        <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
-            <input type="file" id="file-input" name="file" accept=".jpg,.png,.pdf" required>
+        <form id="upload-form" action="upload.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file-input" required>
             <button type="submit">Upload</button>
         </form>
-        <img id="preview" alt="Image Preview">
-        <div id="progress-bar"><div></div></div>
+        <img id="preview" src="#" alt="Image Preview">
+        <div id="progress-bar">
+            <div></div>
+        </div>
     </div>
+
+    <!-- Additional Content -->
+    <div class="container additional-content">
+        <h2>Why Upload Your Data?</h2>
+        <p>Uploading your data to Market Databank allows you to securely store, manage, and share your market data with ease. Our platform provides robust tools for data analysis and collaboration.</p>
+        
+        <h2>Features</h2>
+        <ul>
+            <li>Secure Storage</li>
+            <li>Easy Data Management</li>
+            <li>Collaborative Tools</li>
+            <li>Advanced Analytics</li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Market Databank. All rights reserved.</p>
+            <p>Follow us on 
+                <a href="#">Twitter</a>, 
+                <a href="#">Facebook</a>, 
+                <a href="#">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
     
     <script src="uplod.js"></script>
 </body>

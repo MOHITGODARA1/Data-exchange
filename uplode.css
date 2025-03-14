@@ -4,43 +4,91 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 .container {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #334133;
+    padding: 10px 0;
+    position: fixed;
     width: 100%;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand a {
+    color: white;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-menu li {
+    display: inline;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #ddd;
+}
+
+.content {
+    margin-top: 80px;
     text-align: center;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 36px;
+    color: #353533;
     margin-bottom: 20px;
-    color: #333;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: left;
 }
 
 input[type="file"] {
+    display: block;
+    margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 16px;
+    width: 100%;
 }
 
 button {
-    background-color: #333;
+    background-color: #353533;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -51,7 +99,7 @@ button {
 }
 
 button:hover {
-    background-color: #575757;
+    background-color: #8cb88e;
 }
 
 #preview {
@@ -76,21 +124,66 @@ button:hover {
 #progress-bar div {
     height: 20px;
     width: 0;
-    background: green;
+    background: #285d2a;
     border-radius: 5px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
+/* Additional Content */
+.additional-content {
+    margin-top: 40px;
+    text-align: left;
+}
 
-    h1 {
-        font-size: 20px;
-    }
+.additional-content h2 {
+    font-size: 28px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
 
-    input[type="file"], button {
-        font-size: 14px;
-    }
+.additional-content p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.additional-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.additional-content ul li {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.additional-content ul li::before {
+    content: '•';
+    color: #4CAF50;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: #334133;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ddd;
 }
