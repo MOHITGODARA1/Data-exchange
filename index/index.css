@@ -359,6 +359,8 @@ hr{
     margin: 5px 0;
 }
 .modal {
+    visibility: hidden;
+    visibility: visible;
     display: none;
     position: fixed;
     z-index: 1000;
