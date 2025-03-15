@@ -16,6 +16,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="upload.html">Upload Data</a></li>
                 <li><a href="view.html">View & Share</a></li>
+                <li><button id="loginBtn">Login/Signup</button></li>
             </ul>
         </div>
     </nav>
@@ -150,6 +151,38 @@
             <a href="upload.html" class="btn">Upload Your Data Now</a>
         </div>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Market Databank. All rights reserved.</p>
+            <p>Follow us on 
+                <a href="#">Twitter</a>, 
+                <a href="#">Facebook</a>, 
+                <a href="#">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login/Signup</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <hr>
+                <div class="social-login">
+                    <button class="google"><img src="icons8-google-48.png" alt="Google Icon">Google login</button>
+                    <button class="facebook"><img src="icons8-facebook-logo-48.png" alt="Facebook Icon">Facebook login</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="index.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </body>
 </html>
