@@ -67,3 +67,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }, {scope: 'email,public_profile'});
     }
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const popups = document.querySelectorAll('.popup'); // Select all elements with the 'popup' class
+
+    // Function to check if an element is in the viewport
+    function checkPopups() {
+        const triggerBottom = window.innerHeight / 5 * 4; // Trigger when the element is 80% into the viewport
+
+        popups.forEach(popup => {
+            const popupTop = popup.getBoundingClientRect().top;
+
+            if (popupTop < triggerBottom) {
+                popup.classList.add('show'); // Add the 'show' class to make the animation visible
+            } else {
+                popup.classList.remove('show'); // Remove the 'show' class if it's out of view
+            }
+        });
+    }
+
+    // Listen for scroll events
+    window.addEventListener('scroll', checkPopups);
+
+    // Initial check when the page loads
+    checkPopups();
+});
