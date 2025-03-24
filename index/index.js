@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Modal functionality
     var modal = document.getElementById("loginModal");
     var btn = document.getElementById("loginBtn");
     var span = document.getElementsByClassName("close")[0];
@@ -18,6 +17,23 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display = "none";
         }
     }
+    // Email validation functionality
+    const loginForm = document.getElementById("loginForm");
+    loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const emailInput = document.getElementById("email");
+        const emailValue = emailInput.value.trim();
+        const emailRegex = /^[a-zA-Z][a-zA-Z0-9._%+-]*@gmail\.com$/;
+
+        if (!emailRegex.test(emailValue)) {
+            alert("Please enter a valid email address that ends with @gmail.com and does not start with a number.");
+            return;
+        }
+
+        alert("Login successful!");
+        modal.style.display = "none";
+    });
 
     // Initialize Google API
     gapi.load('auth2', function() {
@@ -36,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Name: ' + profile.getName());
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail());
-            // Handle the login process here
         });
     }
 
@@ -59,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log('Good to see you, ' + response.name + '.');
                     console.log('Email: ' + response.email);
                     console.log('Picture: ' + response.picture.data.url);
-                    // Handle the login process here
                 });
             } else {
                 console.log('User cancelled login or did not fully authorize.');
@@ -67,27 +81,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }, {scope: 'email,public_profile'});
     }
 });
+//popupanimation
 document.addEventListener('DOMContentLoaded', function () {
-    const popups = document.querySelectorAll('.popup'); // Select all elements with the 'popup' class
-
-    // Function to check if an element is in the viewport
+    const popups = document.querySelectorAll('.popup'); 
     function checkPopups() {
-        const triggerBottom = window.innerHeight / 5 * 4; // Trigger when the element is 80% into the viewport
+        const triggerBottom = window.innerHeight / 5 * 4; 
 
         popups.forEach(popup => {
             const popupTop = popup.getBoundingClientRect().top;
 
             if (popupTop < triggerBottom) {
-                popup.classList.add('show'); // Add the 'show' class to make the animation visible
+                popup.classList.add('show');
             } else {
-                popup.classList.remove('show'); // Remove the 'show' class if it's out of view
+                popup.classList.remove('show'); 
             }
         });
     }
-
-    // Listen for scroll events
     window.addEventListener('scroll', checkPopups);
-
-    // Initial check when the page loads
     checkPopups();
 });
