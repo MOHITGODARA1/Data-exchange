@@ -19,6 +19,36 @@ document.addEventListener('DOMContentLoaded', function() {
             date: 'Uploaded: Jan 15, 2025',
             description: 'Amazon.com, Inc. is an American multinational technology company based in Seattle, Washington.',
             link: 'https://www.amazon.com'
+        },
+        {
+            title: 'Tesla, Inc.',
+            date: 'Uploaded: Mar 18, 2025',
+            description: 'Tesla, Inc. is an American electric vehicle and clean energy company based in Palo Alto, California.',
+            link: 'https://www.tesla.com'
+        },
+        {
+            title: 'Google LLC',
+            date: 'Uploaded: Mar 20, 2025',
+            description: 'Google LLC is an American multinational technology company specializing in Internet-related services and products.',
+            link: 'https://www.google.com'
+        },
+        {
+            title: 'Meta Platforms, Inc.',
+            date: 'Uploaded: Mar 22, 2025',
+            description: 'Meta Platforms, Inc., formerly Facebook, Inc., is an American multinational technology conglomerate.',
+            link: 'https://www.meta.com'
+        },
+        {
+            title: 'Netflix, Inc.',
+            date: 'Uploaded: Mar 25, 2025',
+            description: 'Netflix, Inc. is an American subscription streaming service and production company.',
+            link: 'https://www.netflix.com'
+        },
+        {
+            title: 'NVIDIA Corporation',
+            date: 'Uploaded: Mar 28, 2025',
+            description: 'NVIDIA Corporation is an American multinational technology company known for its GPUs for gaming and professional markets.',
+            link: 'https://www.nvidia.com'
         }
     ];
 

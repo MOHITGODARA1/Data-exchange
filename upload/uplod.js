@@ -36,6 +36,8 @@ document.getElementById('upload-form').addEventListener('submit', function(event
     xhr.onload = function() {
         if (xhr.status === 200) {
             alert('File uploaded successfully!');
+            document.getElementById('file-input').value = ""; // Reset file input
+            document.getElementById('preview').style.display = 'none'; // Hide preview
         } else {
             alert('Upload failed. Please try again.');
         }
@@ -43,4 +45,11 @@ document.getElementById('upload-form').addEventListener('submit', function(event
     };
     
     xhr.send(formData);
+});
+
+// Add a reset button functionality
+document.getElementById('reset-button').addEventListener('click', function() {
+    document.getElementById('file-input').value = ""; // Clear file input
+    document.getElementById('preview').style.display = 'none'; // Hide preview
+    document.getElementById('progress-bar').style.display = 'none'; // Hide progress bar
 });

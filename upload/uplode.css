@@ -13,7 +13,7 @@ body {
 }
 
 .navbar {
-    background-color: #334133;
+    background-color: #588157;
     padding: 10px 0;
     position: fixed;
     width: 100%;
@@ -124,7 +124,7 @@ button:hover {
 #progress-bar div {
     height: 20px;
     width: 0;
-    background: #285d2a;
+    background: #588157;
     border-radius: 5px;
 }
 
@@ -136,7 +136,7 @@ button:hover {
 
 .additional-content h2 {
     font-size: 28px;
-    color: #4CAF50;
+    color: #121312;
     margin-bottom: 10px;
 }
 
@@ -161,7 +161,7 @@ button:hover {
 
 .additional-content ul li::before {
     content: '•';
-    color: #4CAF50;
+    color: #121312;
     position: absolute;
     left: 0;
     top: 0;
@@ -170,8 +170,9 @@ button:hover {
 
 /* Footer */
 .footer {
-    background-color: #334133;
+    background-color: #588157;
     color: white;
+    height: 100px;
     padding: 20px 0;
     text-align: center;
     margin-top: 40px;
@@ -186,4 +187,31 @@ button:hover {
 
 .footer a:hover {
     color: #ddd;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button.btn-secondary {
+    background-color: #f44336;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#progress-bar div {
+    height: 10px;
+    background-color: #4CAF50;
+    transition: width 0.3s ease;
 }

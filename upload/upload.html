@@ -19,22 +19,47 @@
             </ul>
         </div>
     </nav>
+
     <div class="container content">
-        <h1>Upload Your Data</h1>
+        <h1 class="text-center">Upload Your Data</h1>
+        <p class="text-center">Easily upload your files to our secure platform and manage your data efficiently.</p>
+
         <form id="upload-form" action="upload.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" id="file-input" required>
-            <button type="submit">Upload</button>
+            <div class="form-group">
+                <label for="file-input">Choose a file to upload (Max: 5MB):</label>
+                <input type="file" name="file" id="file-input" required>
+            </div>
+            <div class="preview-container">
+                <img id="preview" src="#" alt="Image Preview" style="display: none; max-width: 100%; height: auto; margin-top: 10px;">
+            </div>
+            <div id="progress-bar" style="display: none; margin-top: 10px;">
+                <div style="width: 0%; height: 10px; background-color: #4CAF50;"></div>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">Upload</button>
+                <button type="button" id="reset-button" class="btn btn-secondary">Reset</button>
+            </div>
         </form>
-        <img id="preview" src="#" alt="Image Preview">
-        <div id="progress-bar">
-            <div></div>
-        </div>
     </div>
 
-    <!-- Additional Content -->
+    <!-- Additional Content Section -->
     <div class="container additional-content">
         <h2>Why Upload Your Data?</h2>
-        <p>Uploading your data to Market Databank allows you to securely store, manage, and share your market data with ease. Our platform provides robust tools for data analysis and collaboration.</p>
+        <p>Uploading your data to Market Databank allows you to securely store, manage, and share your market data with ease. Our platform provides robust tools for data analysis and collaboration, ensuring that your data remains safe, accessible, and actionable.
+            <br>
+            Benefits of Uploading Your Data:
+            <br>
+            ✔ Secure Storage – Your data is encrypted and stored safely, preventing unauthorized access.
+            <br>
+            ✔ Easy Access & Management – Organize, retrieve, and update your data seamlessly.
+            <br>
+            ✔ Advanced Data Analytics – Utilize built-in analytics tools to gain insights and make data-driven decisions.
+            <br>
+            ✔ Seamless Collaboration – Share data effortlessly with team members, partners, or clients.
+            <br>
+            ✔ Automated Backups – Never worry about losing your valuable data with our automatic backup system.
+            <br>
+            ✔ Scalability – Whether you're handling small datasets or large volumes of information, our platform scales with your needs.</p>
         
         <h2>Features</h2>
         <ul>
