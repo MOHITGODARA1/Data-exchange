@@ -1,217 +1,69 @@
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.navbar {
-    background-color: #588157;
-    padding: 10px 0;
-    position: fixed;
+nav {
+    background-color: #6543cd;
+    padding: 20px 0; /* Increase padding for larger nav bar */
     width: 100%;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    position: sticky;
 }
 
-.navbar .container {
+.nav-container {
     display: flex;
+   
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.navbar-brand a {
+.company-name {
+    flex: 1;
+    margin-left: -109px;
+}
+
+.company-name a {
+    font-family: Hoefler Text;
     color: white;
     text-decoration: none;
-    font-size: 35px;
+    font-size: 35px; /* Increase font size for company name */
     font-weight: bold;
 }
 
-.navbar-menu {
+nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 20px;
+    margin-right: -108px;
+    justify-content: flex-end; /* Align nav items to the right */
+    flex: 1; 
 }
 
-.navbar-menu li {
-    display: inline;
+nav ul li {
+    margin: 0 9px;
 }
 
-.navbar-menu a {
+nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 23px;
-    transition: color 0.3s ease;
-}
-
-.navbar-menu a:hover {
-    color: #ddd;
-}
-
-.content {
-    margin-top: 80px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 36px;
-    color: #353533;
-    margin-bottom: 20px;
-}
-
-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    text-align: left;
-}
-
-input[type="file"] {
-    display: block;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 100%;
-}
-
-button {
-    background-color: #353533;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+    font-size: 18px;
+    padding: 10px 15px;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #8cb88e;
-}
-
-#preview {
-    margin-top: 20px;
-    max-width: 100%;
-    height: auto;
-    display: none;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-#progress-bar {
-    width: 100%;
-    background: #ddd;
-    margin-top: 10px;
-    display: none;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-#progress-bar div {
-    height: 20px;
-    width: 0;
-    background: #588157;
+nav ul li a:hover {
+    background-color: #6643cd5f;
     border-radius: 5px;
 }
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-/* Additional Content */
-.additional-content {
-    margin-top: 40px;
-    text-align: left;
-}
-
-.additional-content h2 {
-    font-size: 28px;
-    color: #121312;
-    margin-bottom: 10px;
-}
-
-.additional-content p {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.additional-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.additional-content ul li {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.additional-content ul li::before {
-    content: '•';
-    color: #121312;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 20px;
-}
-
-/* Footer */
-.footer {
-    background-color: #588157;
-    color: white;
-    height: 100px;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 5px;
-    transition: color 0.3s ease;
-}
-
-.footer a:hover {
-    color: #ddd;
-}
-
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button.btn-primary {
-    background-color: #4CAF50;
-    color: white;
-}
-
-button.btn-secondary {
-    background-color: #f44336;
-    color: white;
-}
-
-button:hover {
-    opacity: 0.9;
-}
-
-#progress-bar div {
-    height: 10px;
-    background-color: #4CAF50;
-    transition: width 0.3s ease;
-}
+  

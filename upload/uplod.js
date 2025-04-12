@@ -1,55 +1,47 @@
-document.getElementById('file-input').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        if (file.size > 5 * 1024 * 1024) {
-            alert("File size exceeds 5MB limit!");
-            event.target.value = "";
-            return;
-        }
-        if (file.type.startsWith('image/')) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                document.getElementById('preview').src = e.target.result;
-                document.getElementById('preview').style.display = 'block';
-            }
-            reader.readAsDataURL(file);
-        } else {
-            document.getElementById('preview').style.display = 'none';
-        }
+
+  const fileInput = document.getElementById("file-input");
+  const fileList = document.getElementById("file-list");
+  const uploadBtn = document.getElementById("upload-btn");
+
+  fileInput.addEventListener("change", () => {
+    const files = fileInput.files;
+    fileList.innerHTML = "";
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      const div = document.createElement("div");
+      div.textContent = `📁 ${file.name} - ${Math.round(file.size / 1024)} KB`;
+      fileList.appendChild(div);
     }
-});
+  });
 
-document.getElementById('upload-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const formData = new FormData(this);
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'upload.php', true);
-    
-    xhr.upload.onprogress = function(e) {
-        if (e.lengthComputable) {
-            const percentComplete = (e.loaded / e.total) * 100;
-            document.getElementById('progress-bar').style.display = 'block';
-            document.getElementById('progress-bar').firstElementChild.style.width = percentComplete + '%';
-        }
-    };
-    
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            alert('File uploaded successfully!');
-            document.getElementById('file-input').value = ""; // Reset file input
-            document.getElementById('preview').style.display = 'none'; // Hide preview
-        } else {
-            alert('Upload failed. Please try again.');
-        }
-        document.getElementById('progress-bar').style.display = 'none';
-    };
-    
-    xhr.send(formData);
-});
+  // Upload button logic
+  uploadBtn.addEventListener("click", () => {
+    if (fileInput.files.length > 0) {
+      alert("✅ Your file has been uploaded successfully!");
+      fileInput.value = "";
+      fileList.innerHTML = "";
+    } else {
+      alert("⚠️ Please select a file first.");
+    }
+  });
 
-// Add a reset button functionality
-document.getElementById('reset-button').addEventListener('click', function() {
-    document.getElementById('file-input').value = ""; // Clear file input
-    document.getElementById('preview').style.display = 'none'; // Hide preview
-    document.getElementById('progress-bar').style.display = 'none'; // Hide progress bar
-});
+  // Scroll animation logic: trigger animation ONCE when the section first enters viewport
+  const fadeIns = document.querySelectorAll(".fade-in");
+
+  // Check visibility function
+  function checkFadeIns() {
+    fadeIns.forEach((el) => {
+      const top = el.getBoundingClientRect().top;
+      const isVisible = top < window.innerHeight - 100;
+
+      if (isVisible && !el.classList.contains("visible")) {
+        // Add animation class only the first time it becomes visible
+        el.classList.add("visible");
+      }
+    });
+  }
+
+  // Trigger on scroll and load
+  window.addEventListener("scroll", checkFadeIns);
+  window.addEventListener("load", checkFadeIns); // <- runs animation on first load if already in view
+

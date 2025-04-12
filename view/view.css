@@ -1,0 +1,109 @@
+/* .full-width-div {
+   width: 90%; 
+   height: 200px;
+   margin: 10px auto; 
+   background-color: lightgray; 
+   border-radius: 8px; 
+   transform: scale(0.8);
+   transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
+   cursor: pointer;
+} */
+
+.full-width-div.visible {
+   opacity: 1; /* Fully visible */
+   transform: scale(1); /* Pop to full size */
+}
+ .full-width-div:hover {
+   background-color: #e2e8f0;
+ }
+ .full-width-div {
+   display: block; /* Show all divs by default */
+   opacity: 1; /* Fully visible */
+   transform: scale(1);
+   width: 90%; /* Keep the width at 90% of the window */
+   height: 300px; /* Increase the height to 300px */
+   margin: 10px auto; /* Center the div horizontally and add vertical spacing */
+   background-color: lightgray; /* Optional: Add a background color for visibility */
+   border-radius: 8px; /* Optional: Add rounded corners */
+   padding: 20px; /* Add padding for better spacing inside the div */
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+   transform: scale(0.8);
+   transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
+   cursor: pointer;
+}
+/* Search Bar Styling */
+.search-bar-container {
+   background: linear-gradient(to right, #5781ad, #00c6ff); 
+   padding: 20px;
+   height: 300px;
+   border-bottom-left-radius: 15px; /* Curved bottom border */
+   border-bottom-right-radius: 15px; /* Curved bottom border */
+   text-align: center;
+}
+.EX{
+      margin-top: 10px; /* Add spacing above the text */
+      font-size: 36px; /* Adjust font size */
+      font-weight: bold; /* Make the text bold */
+      color: #333; /* Set the text color */
+      text-align: center; /* Center the text */
+      text-transform: uppercase; /* Optional: Make the text uppercase */
+      line-height: 1.5; /* Improve readability */
+  
+}
+#search-bar {
+   width: 50%; /* Centered and responsive width */
+   padding: 10px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   border-radius: 8px; /* Rounded corners */
+   outline: none;
+   transition: border-color 0.3s ease;
+}
+
+#search-bar:focus {
+   border-color: #007bff; /* Blue border on focus */
+}
+
+/* Hide divs by default when filtered */
+/* .full-width-div {
+   display: none; 
+} */
+
+.full-width-div.hidden {
+   display: none; /* Hide divs that do not match the search */
+}
+.action-button {
+   display: inline-block;
+   margin-top: 10px; /* Add spacing above the button */
+   padding: 10px 20px; /* Add padding inside the button */
+   background-color: #007bff; /* Button background color */
+   margin-top: 60px;
+   color: white; /* Button text color */
+   border: none; /* Remove border */
+   border-radius: 5px; /* Add rounded corners */
+   font-size: 16px; /* Set font size */
+   cursor: pointer; /* Change cursor to pointer */
+   transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.action-button:hover {
+   background-color: #0056b3; /* Darker blue on hover */
+}
+
+.full-width-div.visible {
+   opacity: 1; /* Fully visible */
+   transform: scale(1); /* Pop to full size */
+}
+
+h1 {
+   font-size: 24px; /* Set the font size for h1 */
+   font-weight: bold; /* Make the text bold */
+   color: #333; /* Set the text color */
+   margin-bottom: 10px; /* Add spacing below the h1 */
+}
+
+p {
+   font-size: 16px; /* Set the font size for paragraphs */
+   color: #555; /* Set the text color for paragraphs */
+   line-height: 1.5; /* Improve readability with line height */
+}
