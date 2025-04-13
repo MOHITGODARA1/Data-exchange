@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Cloud Storage Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1, h2 {
+      color: #0056b3;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      background: #fff;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background: #0056b3;
+      color: white;
+    }
+    .image-container {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .image-container img {
+      width: 48%;
+      border-radius: 10px;
+    }
+    ul {
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    /* Navigation Bar */
+    .navbar {
+      background-color: #0056b3;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover {
+      color: #ffcc00;
+    }
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div class="logo">CloudSecure</div>
+    <div>
+      <a href="#features">Features</a>
+      <a href="#providers">Providers</a>
+      <a href="#comparison">Comparison</a>
+    </div>
+  </div>
+
+  <h1 class="fade-in">Secure Cloud Storage & Enterprise-Grade Encryption</h1>
+  <div class="image-container fade-in">
+    <img src="https://tse4.mm.bing.net/th?id=OIP.Y7Q2CgaHi5lSRu-Tv7ByBAHaEM&pid=Api" alt="Cloud Encryption Diagram">
+    <img src="https://tse2.mm.bing.net/th?id=OIP.d1zTQ580Nw9b75bvN8aAUwHaGB&pid=Api" alt="Hybrid AES-ECC Model">
+  </div>
+
+  <h2 id="features" class="fade-in">Key Features of Secure Cloud Storage</h2>
+  <table class="fade-in">
+    <tr><th>Feature</th><th>Description</th></tr>
+    <tr><td>Encryption at Rest</td><td>Data is encrypted when stored using AES-256.</td></tr>
+    <tr><td>Encryption in Transit</td><td>Uses TLS/SSL protocols to protect data in motion.</td></tr>
+    <tr><td>End-to-End Encryption</td><td>Client-side encryption ensures only intended recipients can access data.</td></tr>
+    <tr><td>Zero-Knowledge Encryption</td><td>Providers have no access to user data or keys.</td></tr>
+    <tr><td>Key Management Services</td><td>Options for managing your own keys securely.</td></tr>
+    <tr><td>Compliance Standards</td><td>GDPR, HIPAA, ISO 27001 certified.</td></tr>
+    <tr><td>Access Controls</td><td>2FA, role-based access, secure login.</td></tr>
+    <tr><td>Audit Logs</td><td>Tracks data access and changes.</td></tr>
+  </table>
+
+  <h2 id="providers" class="fade-in">Leading Secure Cloud Storage Providers</h2>
+  <table class="fade-in">
+    <tr><th>Provider</th><th>Encryption Details</th><th>Compliance & Features</th></tr>
+    <tr>
+      <td>Google Cloud</td>
+      <td>Encrypts data by default (at rest & transit); HSM support</td>
+      <td>PCI-DSS, customer-managed keys, access tools</td>
+    </tr>
+    <tr>
+      <td>Dropbox</td>
+      <td>AES-256, SSL/TLS, layered infrastructure</td>
+      <td>GDPR, HIPAA, 2FA, remote wipe</td>
+    </tr>
+    <tr>
+      <td>Proton Drive</td>
+      <td>End-to-end encryption, even when shared</td>
+      <td>ISO 27001, HIPAA, real-time collaboration</td>
+    </tr>
+    <tr>
+      <td>Tresorit</td>
+      <td>Client-side AES-256, zero-knowledge</td>
+      <td>Only user holds keys, SHA-512 hashes</td>
+    </tr>
+    <tr>
+      <td>Cryptoloc</td>
+      <td>End-to-end encryption, ransomware protection</td>
+      <td>Integrated in MS 365, small business focus</td>
+    </tr>
+  </table>
+
+  <h2 id="comparison" class="fade-in">Suggested Excel Columns for Comparison</h2>
+  <ul class="fade-in">
+    <li>Provider Name</li>
+    <li>Encryption at Rest (Yes/No)</li>
+    <li>Encryption in Transit (Yes/No)</li>
+    <li>End-to-End Encryption (Yes/No)</li>
+    <li>Zero-Knowledge Encryption (Yes/No)</li>
+    <li>Customer-Managed Keys (Yes/No)</li>
+    <li>Hardware Security Module Support (Yes/No)</li>
+    <li>Compliance Certifications (GDPR, HIPAA, etc.)</li>
+    <li>Access Control Features</li>
+    <li>Audit Logging (Yes/No)</li>
+    <li>Unique Features</li>
+    <li>Pricing Details</li>
+  </ul>
+
+  <script>
+    // Scroll animation logic: trigger animation ONCE when the section first enters viewport
+    const fadeIns = document.querySelectorAll(".fade-in");
+
+    function checkFadeIns() {
+      fadeIns.forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+        const isVisible = top < window.innerHeight - 100;
+
+        if (isVisible && !el.classList.contains("visible")) {
+          el.classList.add("visible");
+        }
+      });
+    }
+
+    // Trigger on scroll and load
+    window.addEventListener("scroll", checkFadeIns);
+    window.addEventListener("load", checkFadeIns);
+  </script>
+</body>
+</html>

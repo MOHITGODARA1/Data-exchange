@@ -11,12 +11,12 @@
     <nav class="bg-blue-600 p-4 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-white text-lg font-bold">
-                <a href="../index/index.html">Market Databank</a>
+                <a href="../index/index.php">Market Databank</a>
             </div>
             <ul class="flex space-x-6 text-white">
-                <li><a href="../index/index.html" class="hover:text-gray-300">Home</a></li>
-                <li><a href="../upload/upload.html" class="hover:text-gray-300">Upload Data</a></li>
-                <li><a href="view.html" class="hover:text-gray-300">View & Share</a></li>
+                <li><a href="../index/index.php" class="hover:text-gray-300">Home</a></li>
+                <li><a href="../upload/upload.php" class="hover:text-gray-300">Upload Data</a></li>
+                <li><a href="view.php" class="hover:text-gray-300">View & Share</a></li>
             </ul>
         </div>
     </nav>

@@ -10,12 +10,12 @@
     <nav>
         <div class="nav-container">
             <div class="company-name">
-                <a href="index.html">Market Databank</a>
+                <a href="index.php">Market Databank</a>
             </div>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="../upload/upload.html">Upload Data</a></li>
-                <li><a href="../view/view.html">View & Share</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="../upload/upload.php">Upload Data</a></li>
+                <li><a href="../view/view.php">View & Share</a></li>
                 <li><button id="loginBtn">Login/Signup</button></li>
             </ul>
         </div>
@@ -174,8 +174,25 @@
             </div>
         </div>
     </div>
+    <!-- Chatbot Icon -->
+<div id="chat-icon" onclick="toggleChat()">
+    💬
+</div>
+
+<!-- Chatbot Window -->
+<div id="chat-container" style="display: none;">
+    <div id="chat-header">
+        Chatbot <span onclick="toggleChat()">❌</span>
+    </div>
+    <div id="chat-box" style="height: 300px; overflow-y: auto; padding: 10px; border: 1px solid #ddd;"></div>
+    <form id="chat-form" method="post">
+        <input type="text" id="user-input" name="message" placeholder="Type a message..." required>
+        <button type="submit">Send</button>
+    </form>
+</div>
     <script src="index.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
 </body>
 </html>

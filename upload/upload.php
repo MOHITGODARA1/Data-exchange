@@ -16,28 +16,25 @@
   <nav>
     <div class="nav-container">
       <div class="company-name">
-        <a href="../index/index.html">Market Databank</a>
+        <a href="../index/index.php">Market Databank</a>
       </div>
       <ul>
-        <li><a href="../index/index.html">Home</a></li>
-        <li><a href="upload.html" class="active">Upload Data</a></li>
-        <li><a href="../view/view.html">View & Share</a></li>
+        <li><a href="../index/index.php">Home</a></li>
+        <li><a href="upload.php" class="active">Upload Data</a></li>
+        <li><a href="../view/view.php">View & Share</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="text-center py-20 bg-blue-50 fade-in">
     <h2 class="text-4xl font-bold text-blue-700">Securely Upload & Access Your Data</h2>
     <p class="text-gray-600 mt-4">Fast, easy, and safe data storage in the cloud.</p>
   </section>
 
-  <!-- Upload Section -->
   <main class="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-2xl fade-in">
     <h2 class="text-2xl font-semibold text-gray-800 mb-4">Upload your files</h2>
     
-    <!-- Upload Box -->
-    <div id="upload-area" class="border-4 border-dashed border-gray-300 rounded-lg p-10 text-center cursor-pointer hover:bg-gray-50 transition flex flex-col items-center justify-center">
+    <!-- <div id="upload-area" class="border-4 border-dashed border-gray-300 rounded-lg p-10 text-center cursor-pointer hover:bg-gray-50 transition flex flex-col items-center justify-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4-4m0 0l4 4m-4-4v12" />
       </svg>
@@ -48,14 +45,51 @@
       </label>
       <div id="file-list" class="mt-4 text-left text-sm text-gray-600"></div>
   
-      <!-- Centered Upload Button -->
       <button id="upload-btn" class="mt-6 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
         Upload
       </button>
+    </div> -->
+
+    <div id="upload-area" class="border-4 border-dashed border-gray-300 rounded-lg p-10 text-center cursor-pointer hover:bg-gray-50 transition flex flex-col items-center justify-center">
+    <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4-4m0 0l4 4m-4-4v12" />
+    </svg>
+    <p class="text-gray-500 mt-2">Drag & drop your files here or</p>
+    <label class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg cursor-pointer hover:bg-blue-700">
+      Browse Files
+      <input type="file" id="file-input" class="hidden" multiple />
+    </label>
+    <div id="file-list" class="mt-4 text-left text-sm text-gray-600"></div>
+  </div>
+
+    <!-- Additional Information Form -->
+  <form id="data-info-form" method="POST" action="upload_process.php" enctype="multipart/form-data">
+    <div class="mb-4">
+      <label for="data_name" class="block text-gray-700 font-medium">Data Name:</label>
+      <input type="text" id="data_name" name="data_name" class="w-full p-2 border border-gray-300 rounded-lg" required />
     </div>
-    <p class="text-gray-500 text-sm mt-4">Supported formats: PDF, DOCX, JPG, PNG. Max size: 50MB.</p>
+    <div class="mb-4">
+      <label for="description" class="block text-gray-700 font-medium">Description:</label>
+      <textarea id="description" name="description" rows="4" class="w-full p-2 border border-gray-300 rounded-lg" required></textarea>
+    </div>
+    <div class="mb-4">
+      <label for="category" class="block text-gray-700 font-medium">Type/Category:</label>
+      <select id="category" name="category" class="w-full p-2 border border-gray-300 rounded-lg" required>
+        <option value="">-- Select Type --</option>
+        <option value="Document">Document</option>
+        <option value="Image">Image</option>
+        <option value="Presentation">Presentation</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <button id="upload-btn" type="submit" class="mt-6 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+      Upload
+    </button>
+  </form>
+    
   </main>
-  <!-- Features -->
+  
+
   <section class="max-w-6xl mx-auto mt-20 px-6 grid md:grid-cols-3 gap-6 fade-in">
     <div class="bg-white p-6 rounded-xl shadow-md text-center">
       <h3 class="text-xl font-semibold text-blue-600">🔒 Secure</h3>
@@ -71,7 +105,6 @@
     </div>
   </section>
 
-  <!-- Mocked Recent Uploads -->
   <section class="max-w-4xl mx-auto mt-20 bg-white p-6 rounded-xl shadow fade-in">
     <h3 class="text-xl font-bold text-gray-800 mb-4">Recent Uploads (Preview)</h3>
     <ul class="list-disc pl-6 text-gray-600 space-y-2">
@@ -81,12 +114,10 @@
     </ul>
   </section>
 
-  <!-- Footer -->
   <footer class="mt-20 bg-blue-600 text-white text-center py-6">
     &copy; 2025 dataBank. All rights reserved.
   </footer>
 
-  <!-- JS for File Upload + Scroll Animation -->
   <script src="uplod.js"></script>
 
 </body>
