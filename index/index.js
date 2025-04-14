@@ -134,3 +134,15 @@ document.getElementById("chat-form").addEventListener("submit", function (event)
     // Clear input field
     document.getElementById("user-input").value = "";
 });
+function subscribe() {
+    const email = document.getElementById('email').value;
+    if (email && email.includes('@')) {
+      alert(`Subscribed with: ${email}`);
+    } else {
+      alert('Please enter a valid email address.');
+    }
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }

@@ -6,38 +6,104 @@ const description = document.getElementById("description");
 const category = document.getElementById("category");
 const dataInfoForm = document.getElementById("data-info-form");
 
-// Handle file selection
-fileInput.addEventListener("change", () => {
-  const files = fileInput.files;
-  fileList.innerHTML = "";
-  for (let i = 0; i < files.length; i++) {
-    const file = files[i];
-    const div = document.createElement("div");
-    div.textContent = `📁 ${file.name} - ${Math.round(file.size / 1024)} KB`;
-    fileList.appendChild(div);
-  }
-});
+// fileInput.addEventListener("change", () => {
+//   const files = fileInput.files;
+//   fileList.innerHTML = "";
+//   for (let i = 0; i < files.length; i++) {
+//     const file = files[i];
+//     const div = document.createElement("div");
+//     div.textContent = `📁 ${file.name} - ${Math.round(file.size / 1024)} KB`;
+//     fileList.appendChild(div);
+//   }
+// });
 
-// Upload button logic
+// uploadBtn.addEventListener("click", (event) => {
+//   event.preventDefault(); 
+
+//   if (fileInput.files.length === 0) {
+//     alert("⚠️ Please select a file to upload.");
+//     return;
+//   }
+
+//   if (!dataName.value.trim() || !description.value.trim() || !category.value) {
+//     alert("⚠️ Please fill out all the required information before uploading.");
+//     return;
+//   }
+//   alert("✅ Your file and information have been uploaded successfully!");
+//   dataInfoForm.submit(); 
+// });
+  // Handle form submission
+  document.getElementById("data-info-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const form = event.target;
+
+    // Create a FormData object to send the form data via AJAX
+    const formData = new FormData(form);
+
+    // Send the form data using fetch
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === "success") {
+          // Show success message
+          alert("File uploaded successfully!");
+
+          // Clear the form
+          form.reset();
+        } else {
+          // Show error message
+          alert("Error: " + data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("An error occurred while uploading the file.");
+      });
+  });
 uploadBtn.addEventListener("click", (event) => {
   event.preventDefault(); // Prevent form submission by default
 
   // Check if a file is selected
   if (fileInput.files.length === 0) {
-    alert("⚠️ Please select a file to upload.");
-    return;
+      alert("⚠️ Please select a file to upload.");
+      return;
   }
 
   // Validate form fields
   if (!dataName.value.trim() || !description.value.trim() || !category.value) {
-    alert("⚠️ Please fill out all the required information before uploading.");
-    return;
+      alert("⚠️ Please fill out all the required information before uploading.");
+      return;
   }
 
-  // If all validations pass, show success message and submit the form
-  alert("✅ Your file and information have been uploaded successfully!");
-  dataInfoForm.submit(); // Submit the form
+  // Create FormData object
+  const formData = new FormData(dataInfoForm);
+
+  // Send AJAX request
+  fetch('upload_process.php', {
+      method: 'POST',
+      body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.status === 'success') {
+          alert("✅ " + data.message);
+          // Optional: Reset form
+          dataInfoForm.reset();
+          fileInput.value = '';
+          fileList.innerHTML = '';
+      } else {
+          alert("❌ " + data.message);
+      }
+  })
+  .catch(error => {
+      alert("⚠️ An error occurred during upload.");
+  });
 });
+
 
 // Scroll animation logic: trigger animation ONCE when the section first enters viewport
 const fadeIns = document.querySelectorAll(".fade-in");

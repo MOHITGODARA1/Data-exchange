@@ -6,6 +6,88 @@
     <title>Market Databank - View & Share</title>
     <link rel="stylesheet" href="view.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .footer {
+    background-color: #1a202c;
+    color: white;
+    padding: 3rem 1rem;
+    font-family: sans-serif;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .footer-container > div {
+    flex: 1 1 220px;
+    min-width: 220px;
+  }
+
+  .footer h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .footer p,
+  .footer a,
+  .footer li {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #e2e8f0;
+  }
+ li{
+    list-style: none;
+ }
+  .footer a {
+    color: #63b3ed;
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .social-icons img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+  }
+
+  .social-icons img:hover {
+    transform: scale(1.1);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #4a5568;
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 0.875rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-container > div {
+      text-align: center;
+    }
+  }
+    </style>
 </head>
 <body class="bg-gray-100">
     <nav class="bg-blue-600 p-4 shadow-lg">
@@ -118,7 +200,50 @@
         <p>provide cost-effective ways to store, manage, and access growing volumes of data without heavy upfront investments. These solutions typically use cloud-based infrastructure, allowing startups to pay only for the storage they use and easily scale as their business expands. With features like automatic backups, high availability, and remote access, startups can focus on innovation rather than IT management. Many providers also offer integration with development tools and analytics platforms.</p>
           <button class="action-button" onclick="window.location.href='company1.html'">Learn More</button>
     </div>
+    <footer class="footer">
+  <div class="footer-container">
+    <!-- Left Column -->
+    <div>
+      <h3>About Market Databank</h3>
+      <p>
+        Market Databank is your go-to platform for organizing, storing, and sharing market data securely. 
+        With tools for real-time collaboration, secure file sharing, and data encryption, we empower businesses 
+        to make informed decisions.
+      </p>
+      <h3>Services</h3>
+      <ul>
+        <li>Data Storage Solutions</li>
+        <li>Secure File Sharing</li>
+        <li>Real-time Collaboration</li>
+        <li>Analytics Dashboard</li>
+        <li>Custom Integrations</li>
+      </ul>
+    </div>
 
+    <!-- Right Column -->
+    <div>
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:support@marketdatabank.com">support@marketdatabank.com</a></p>
+      <p>Phone: +91 9057-1647-91</p>
+      <p>Address: 123 Market Street, Delhi, D 10001</p>
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=bG29Ckcdp6YP&format=png&color=000000" alt="Twitter"></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="Facebook"></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000" alt="LinkedIn"></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Market Databank. All rights reserved.</p>
+    <p>
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Service</a>
+    </p>
+  </div>
+</footer>
     <script src="view.js"></script>
 </body>
 </html>
