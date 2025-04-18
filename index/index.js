@@ -146,3 +146,55 @@ function subscribe() {
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+
+
+
+
+//   new
+
+    // Handle Login Form Submission
+  
+    document.getElementById('loginbtn').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default behavior
+    
+        const email = document.getElementById('email').value; // Fetch the email entered by the user
+        const password = document.getElementById('password').value; // Fetch the password entered by the user
+    
+        // Send the login data to the server
+        fetch('check_user.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.status === 'success') {
+                    alert('Login successful!');
+    
+                    // Remove the login and signup buttons
+                    const loginButton = document.getElementById('loginbtn');
+                    const signupLink = document.getElementById('signupLink'); // Assuming there's an element with id 'signupLink'
+    
+                    if (loginButton) loginButton.remove();
+                    if (signupLink) signupLink.remove();
+    
+                    // Add the user's email
+                    const userEmailElement = document.createElement('span');
+                    userEmailElement.textContent = email; // Use the logged-in user's email
+                    userEmailElement.style.marginLeft = '10px';
+                    userEmailElement.style.fontSize = '16px';
+                    userEmailElement.style.color = 'blue';
+    
+                    // Append the email to the parent container
+                    const parentContainer = document.querySelector('.login-container'); // Replace with the appropriate container
+                    if (parentContainer) parentContainer.appendChild(userEmailElement);
+                } else {
+                    alert(data.message); // Show error message
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+    });

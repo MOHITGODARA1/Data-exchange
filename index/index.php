@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Market Databank - Home</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
     <style>
         .footer {
     background-color: #1a202c;
@@ -12,7 +20,10 @@
     padding: 3rem 1rem;
     font-family: sans-serif;
   }
-
+  .g-signin2{
+    width: 100%;
+  }
+  
   .footer-container {
     display: flex;
     justify-content: space-between;
@@ -86,6 +97,112 @@
       text-align: center;
     }
   }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-left: -64px;
+    margin-right: -108px;
+    justify-content: flex-end; /* Align nav items to the right */
+    flex: 1; /* Take up available space */
+}
+.feature {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 66px;
+    justify-content: center;
+    margin-top: 0px;
+}
+.imagesection{
+    width: 100%;
+    margin-top: 0px;
+}
+.features{
+    margin-top: 0px;
+    background-color: #333c50;
+    height: 210px;
+    margin-bottom: 0px;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.Key{
+    margin-top: 125px;
+    margin-bottom: 15px;
+    font-family: "Cormorant Garamond", serif;
+    font-size:60px;
+
+}
+.cta{
+    background: liner-gradient();
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cta .btn {
+    width: 32%;
+    height: 27%;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    background: linear-gradient(90deg,rgb(39, 43, 66),rgb(72, 67, 115),rgb(53, 59, 96));
+   
+    /* -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;  */
+    /* font-size: 2rem; 
+    font-weight: bold; */
+    /* text-align: center; */
+    /* margin: 20px 0; */
+}
+
+.freedata{
+    background: linear-gradient(90deg,rgb(39, 43, 66),rgb(72, 67, 115),rgb(53, 59, 96));
+    margin-left: 194px;
+    margin-right: 164px;
+    height: 630px;
+    border-radius: 13px
+}
+.detail-of-provider{
+    /* color:white; */
+    font-family: "Cormorant Garamond", serif;
+}
+.freecontent{
+    text-align: start;
+    margin-left: 57px;
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 21px;
+    margin-left: 11px;
+}
+.AWSdataset{
+    margin-left: -501px;
+    margin-top: 18px;
+    margin-bottom: 14px;
+  font-family: "Cormorant Garamond", serif;
+    color: white;
+}
+.provider{
+    font-family: serif;
+    margin-left: -637px;
+    /* color: white; */
+    color:black;
+}
     </style>
 </head>
 <body>
@@ -98,7 +215,8 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="../upload/upload.php">Upload Data</a></li>
                 <li><a href="../view/view.php">View & Share</a></li>
-                <li><button id="loginBtn">Login/Signup</button></li>
+                <li><a href="contact.php">Feedback</a></li>
+                <li><a href="loginpage.php"><button id="loginBtn">Logout</button></a></li>
             </ul>
         </div>
     </nav>
@@ -154,8 +272,8 @@
             </section>
         </div>
         
+        <h2 class="Key">Key Features</h2>
         <section class="features">
-            <h2 class="Key">Key Features</h2>
             <div class="features-container">
                 <div class="feature popup">
                     <strong>Easy Data Upload:</strong> Upload CSV, PDF, or text files in just a few clicks.
@@ -193,13 +311,13 @@
          <div class="popularset">
             <h1 class="sers-api">Popular free data sets and APIs</h1>
             <div class="freedata">
-                <h2 class="set">Free data sets</h2>
+                <h2 class="set" style="color: white; font-family: 'Cormorant Garamond', serif;    margin-bottom: 15px;font-size: 56px;">Free data sets</h2>
                 <p class="freecontent">
                     Choose from over 1,000 free data sets across the Automotive, Financial Services, Gaming, Healthcare & Life Sciences, Manufacturing, Marketing, Media & Entertainment, Retail, and more industries.
                 </p>
                 <hr>
                 <h2 class="AWSdataset">
-                    Popular free data sets on AWS DAta Exchange
+                    Popular free data sets on AWS Data Exchange
                 </h2>
                 <div class="datacontainor popup">
                     <div class="firstset">
@@ -282,7 +400,7 @@
 </footer>
 
 
-    <div id="loginModal" class="modal">
+    <!-- <div id="loginModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Login/Signup</h2>
@@ -296,12 +414,12 @@
                 </form>
                 <hr>
                 <div class="social-login">
-                    <button class="google"><img src="icons8-google-48.png" alt="Google Icon">Google login</button>
-                    <button class="facebook"><img src="icons8-facebook-logo-48.png" alt="Facebook Icon">Facebook login</button>
+                    <div class="g-signin2" data-onsuccess="onGoogleSignIn" data-theme="dark"></div>
+                    
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Chatbot Icon -->
 <div id="chat-icon" onclick="toggleChat()">
     💬
@@ -324,3 +442,5 @@
 
 </body>
 </html>
+
+

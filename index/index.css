@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -11,6 +16,7 @@ nav {
     padding: 20px 0; /* Increase padding for larger nav bar */
     width: 100%;
     position: sticky;
+    height: 70px;
 }
 
 .nav-container {
@@ -41,6 +47,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    margin-left: -64px;
     margin-right: -108px;
     justify-content: flex-end; /* Align nav items to the right */
     flex: 1; /* Take up available space */
@@ -60,6 +67,7 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #575757;
+    
     border-radius: 5px;
 }
 
@@ -185,6 +193,8 @@ section ul li strong {
 }
 
 .cta .btn {
+    width: 32%;
+    height: 27%;
     background-color: #333;
     color: white;
     text-decoration: none;
@@ -199,26 +209,29 @@ section ul li strong {
 .features-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 66px;
     justify-content: center;
     margin-top: 36px;
 }
-.key{
-    font-size: 35px;
-    font-family: serif;
-}
+
 .features{
     margin-top: 88px;
+    background-color: rgb(82 80 80);
+    height: 210px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .provider{
     font-family: serif;
     margin-left: -637px;
+    /* color: white; */
 }
 .popularset{
     margin-top: 71px;
 }
 .feature {
-    background-color: #f0e9e9;
+    background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
@@ -245,7 +258,7 @@ section ul li strong {
 }
 .imagesection{
     width: 100%;
-    margin-top: 40px;
+    margin-top: 0px;
 }
 .recontent{
     font-size: 16px;
@@ -302,15 +315,17 @@ hr{
     height: 3px;
     color: rgb(73, 112, 179);
     background-color: rgb(73, 112, 179);
-    width: 90%;
+    width: 100%;
     margin-top: 35px;
 }
 .freecontent{
     text-align: start;
     margin-left: 57px;
+    color: white;
 }
 .AWSdataset{
     margin-left: -369px;
+    color: white;
 }
 .firstset{
     background-color: #fefeff;
@@ -557,7 +572,7 @@ span{
 .social-login button:hover {
     opacity: 0.8;
 }
-.footer {
+/* .footer {
     background-color: #1a202c;
     color: white;
     padding: 3rem 1rem;
@@ -592,6 +607,89 @@ span{
     color: #e2e8f0;
   }
 
+  .footer a {
+    color: #63b3ed;
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .social-icons img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+  }
+
+  .social-icons img:hover {
+    transform: scale(1.1);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #4a5568;
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 0.875rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-container > div {
+      text-align: center;
+    }
+  } */
+  .footer {
+    background-color: #1a202c;
+    color: white;
+    padding: 3rem 1rem;
+    font-family: sans-serif;
+  }
+  .g-signin2{
+    width: 100%;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .footer-container > div {
+    flex: 1 1 220px;
+    min-width: 220px;
+  }
+
+  .footer h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .footer p,
+  .footer a,
+  .footer li {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #e2e8f0;
+  }
+ li{
+    list-style: none;
+ }
   .footer a {
     color: #63b3ed;
     text-decoration: none;

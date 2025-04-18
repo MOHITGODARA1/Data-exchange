@@ -112,7 +112,6 @@
         />
         <h2 class="EX">Explore Company Insights at a Glance</h2>
     </div>
-    <!-- 10 Divs -->
     <div class="full-width-div" onclick="window.location.href='company1.html'" data-name="Secure cloud storage and enterprise-grade encryption.">
         <h1>
             Secure cloud storage and enterprise-grade encryption.
