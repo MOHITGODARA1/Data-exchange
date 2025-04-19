@@ -14,24 +14,21 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
   }
 });
 document.getElementById("uploadForm").addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent the default form submission
+  event.preventDefault(); 
 
   const fileInput = document.getElementById("file");
   const allowedExtensions = ["pdf", "xls", "xlsx"];
   const fileName = fileInput.files[0].name;
   const fileExtension = fileName.split(".").pop().toLowerCase();
 
-  // Validate file type
   if (!allowedExtensions.includes(fileExtension)) {
     alert("Invalid file type. Only PDF and Excel files are allowed.");
     return;
   }
 
-  // Create a FormData object to send the form data via AJAX
   const form = event.target;
   const formData = new FormData(form);
 
-  // Send the form data using fetch
   fetch(form.action, {
     method: "POST",
     body: formData,
@@ -39,11 +36,9 @@ document.getElementById("uploadForm").addEventListener("submit", function (event
     .then((response) => response.json())
     .then((data) => {
       if (data.status === "success") {
-        // Show success popup
         alert("✅ Data uploaded successfully!");
-        form.reset(); // Clear the form
+        form.reset(); 
       } else {
-        // Show error message
         alert("❌ Error: " + data.message);
       }
     })

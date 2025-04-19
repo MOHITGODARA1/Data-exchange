@@ -13,7 +13,7 @@ body {
 
 nav {
     background-color: #333;
-    padding: 20px 0; /* Increase padding for larger nav bar */
+    padding: 20px 0;
     width: 100%;
     position: sticky;
     height: 70px;
@@ -38,7 +38,7 @@ nav {
     font-family: Hoefler Text;
     color: white;
     text-decoration: none;
-    font-size: 35px; /* Increase font size for company name */
+    font-size: 35px;
     font-weight: bold;
 }
 
@@ -49,8 +49,8 @@ nav ul {
     display: flex;
     margin-left: -64px;
     margin-right: -108px;
-    justify-content: flex-end; /* Align nav items to the right */
-    flex: 1; /* Take up available space */
+    justify-content: flex-end; 
+    flex: 1; 
 }
 
 nav ul li {
@@ -73,7 +73,7 @@ nav ul li a:hover {
 
 .container {
     text-align: center;
-    padding: 0; /* Remove padding to eliminate gap */
+    padding: 0; 
 }
 button{
     background-color: rgb(255, 255, 255);
@@ -225,7 +225,6 @@ section ul li strong {
 .provider{
     font-family: serif;
     margin-left: -637px;
-    /* color: white; */
 }
 .popularset{
     margin-top: 71px;
@@ -337,9 +336,9 @@ hr{
     gap: 15px;
     margin-left: 27px;
     margin-right: 27px;
-    opacity: 0; /* Initial state for popup effect */
-    transform: translateY(50px); /* Initial state for popup effect */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transition for popup effect */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
 }
 .popup {
     opacity: 0;
@@ -351,28 +350,6 @@ hr{
     opacity: 1;
     transform: translateY(0);
 }
-/* .footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.footer a {
-    color: #4CAF50;
-    text-decoration: none;
-    margin: 0 5px;
-    transition: color 0.3s ease;
-}
-
-.footer a:hover {
-    color: #ddd;
-}
-
-.footer p {
-    margin: 5px 0;
-} */
 .modal {
     visibility: hidden;
     visibility: visible;
@@ -383,7 +360,7 @@ hr{
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Prevent scrolling */
+    overflow: hidden; 
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
@@ -427,7 +404,6 @@ hr{
 .modal-body {
     margin-top: 10px;
 }
-/* Chat Icon */
 #chat-icon {
     position: fixed;
     bottom: 20px;
@@ -441,8 +417,6 @@ hr{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
-
-/* Chat Container */
 #chat-container {
     position: fixed;
     bottom: 80px;
@@ -455,7 +429,6 @@ hr{
     z-index: 1000;
 }
 
-/* Chat Header */
 #chat-header {
     background-color: #007bff;
     color: white;
@@ -560,7 +533,7 @@ span{
 }
 
 .social-login button.facebook {
-    background-color: #4267B2; /* Facebook blue */
+    background-color: #4267B2;
 }
 
 .social-login button img {
@@ -572,84 +545,7 @@ span{
 .social-login button:hover {
     opacity: 0.8;
 }
-/* .footer {
-    background-color: #1a202c;
-    color: white;
-    padding: 3rem 1rem;
-    font-family: sans-serif;
-  }
 
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-
-  .footer-container > div {
-    flex: 1 1 220px;
-    min-width: 220px;
-  }
-
-  .footer h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  .footer p,
-  .footer a,
-  .footer li {
-    font-size: 0.875rem;
-    line-height: 1.5;
-    color: #e2e8f0;
-  }
-
-  .footer a {
-    color: #63b3ed;
-    text-decoration: none;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-  }
-
-  .social-icons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-
-  .social-icons img {
-    width: 32px;
-    height: 32px;
-    transition: transform 0.3s;
-  }
-
-  .social-icons img:hover {
-    transform: scale(1.1);
-  }
-
-  .footer-bottom {
-    border-top: 1px solid #4a5568;
-    text-align: center;
-    padding-top: 1.5rem;
-    font-size: 0.875rem;
-    margin-top: 2.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .footer-container > div {
-      text-align: center;
-    }
-  } */
   .footer {
     background-color: #1a202c;
     color: white;

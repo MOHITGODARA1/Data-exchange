@@ -1,32 +1,25 @@
 <?php
-// filepath: d:\FULL stack\htdocs\Class project\upload\upload_process.php
-
-// Enable error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Database connection
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "uploddata"; // Replace with your database name
+$dbname = "uploddata";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     echo json_encode(['status' => 'error', 'message' => 'Database connection failed: ' . $conn->connect_error]);
     exit;
 }
 
-// Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Sanitize user inputs
+   
     $name = $conn->real_escape_string($_POST['name']);
     $description = $conn->real_escape_string($_POST['description']);
     $category = $conn->real_escape_string($_POST['category']);
 
-    // Check if a file is uploaded
     if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
         $fileTmpPath = $_FILES['file']['tmp_name'];
         $fileName = $_FILES['file']['name'];
@@ -35,24 +28,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $uploadDir = 'uploads/';
         $filePath = $uploadDir . basename($fileName);
 
-        // Allowed file extensions
         $allowedExtensions = ['pdf', 'xls', 'xlsx'];
         $fileExtension = pathinfo($fileName, PATHINFO_EXTENSION);
 
-        // Validate file type
         if (!in_array(strtolower($fileExtension), $allowedExtensions)) {
             echo json_encode(['status' => 'error', 'message' => 'Invalid file type. Only PDF and Excel files are allowed.']);
             exit;
         }
-
-        // Ensure the upload directory exists
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true);
         }
 
-        // Move the uploaded file to the target directory
         if (move_uploaded_file($fileTmpPath, $filePath)) {
-            // Insert file and user data into the database
             $query = "INSERT INTO uploads (name, description, category, file_name, file_path, file_size, file_type) 
                       VALUES ('$name', '$description', '$category', '$fileName', '$filePath', '$fileSize', '$fileType')";
 

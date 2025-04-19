@@ -10,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <style>
-    /* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +23,6 @@
     line-height: 1.6;
   }
   
-  /* Navbar */
   .navbar {
     background-color: #ffffff;
     padding: 20px 40px;
@@ -39,7 +37,6 @@
     font-size: 1.5rem;
     font-size: 33px;
     color:white;
-    /* font-family: "Cormorant Garamond", serif; */
     font-weight: bold;
   }
   
@@ -55,7 +52,6 @@
     font-weight: 500;
   }
   
-  /* Upload Section */
   .upload-section {
     max-width: 600px;
     margin: 50px auto;
@@ -76,7 +72,6 @@
     margin-bottom: 30px;
   }
   
-  /* Form styles */
   form label {
     display: block;
     margin-top: 20px;
@@ -138,7 +133,6 @@
     background-color: #2563eb;
   }
   
-  /* Data Bank Section */
   .data-bank-info {
     max-width: 600px;
     margin: 50px auto;

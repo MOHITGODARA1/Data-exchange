@@ -51,11 +51,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $botResponse = $responses[$userMessage];
     } elseif ($userMessage === "weather") {
         // Example API integration: Fetch weather data
-        $apiKey = "AIzaSyCOvSw2V7m8Bvop_IiX-38nkGUOz2465cQ"; // Replace with your API key
-        $city = "Punjab"; // Replace with the desired city
+        $apiKey = "AIzaSyCOvSw2V7m8Bvop_IiX-38nkGUOz2465cQ"; 
+        $city = "Punjab"; 
         $apiUrl = "https://api.openweathermap.org/data/2.5/weather?q={$city}&appid={$apiKey}&units=metric";
 
-        // Fetch data from the API
         $apiResponse = file_get_contents($apiUrl);
         if ($apiResponse) {
             $weatherData = json_decode($apiResponse, true);
@@ -70,11 +69,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $botResponse = "Sorry, I couldn't connect to the weather service.";
         }
     } else {
-        // Default response
         $botResponse = "I'm sorry, I didn't understand that. Can you rephrase?";
     }
 
-    // Return the bot's response
     echo $botResponse;
     exit;
 }

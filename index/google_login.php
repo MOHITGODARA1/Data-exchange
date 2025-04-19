@@ -1,12 +1,10 @@
 <?php
-// filepath: d:\FULL stack\htdocs\Class project\index\google_login.php
-session_start(); // Start the session
+session_start(); 
 
-// Database connection
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "userinformation"; // Replace with your database name
+$dbname = "userinformation";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

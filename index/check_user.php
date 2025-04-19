@@ -1,11 +1,10 @@
 <?php
-session_start(); // Start the session
+session_start(); 
 
-// Database connection
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "userinformation"; // Replace with your database name
+$dbname = "userinformation"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -30,7 +29,7 @@ if (isset($data['email']) && isset($data['password'])) {
         $user = $result->fetch_assoc();
         // Verify the password
         if (password_verify($password, $user['password'])) {
-            $_SESSION['user_email'] = $email; // Store the user's email in the session
+            $_SESSION['user_email'] = $email; 
             echo json_encode(['status' => 'success', 'message' => 'Login successful.']);
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Invalid password.']);

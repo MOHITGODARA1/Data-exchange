@@ -104,8 +104,8 @@
     display: flex;
     margin-left: -64px;
     margin-right: -108px;
-    justify-content: flex-end; /* Align nav items to the right */
-    flex: 1; /* Take up available space */
+    justify-content: flex-end; 
+    flex: 1; 
 }
 .feature {
     background-color: #ffffff;
@@ -162,13 +162,6 @@
     border-radius: 50px;
     transition: background-color 0.3s ease;
     background: linear-gradient(90deg,rgb(39, 43, 66),rgb(72, 67, 115),rgb(53, 59, 96));
-   
-    /* -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent;  */
-    /* font-size: 2rem; 
-    font-weight: bold; */
-    /* text-align: center; */
-    /* margin: 20px 0; */
 }
 
 .freedata{
@@ -179,7 +172,6 @@
     border-radius: 13px
 }
 .detail-of-provider{
-    /* color:white; */
     font-family: "Cormorant Garamond", serif;
 }
 .freecontent{
@@ -200,7 +192,6 @@
 .provider{
     font-family: serif;
     margin-left: -637px;
-    /* color: white; */
     color:black;
 }
     </style>
@@ -344,16 +335,7 @@
             <a href="../upload/upload.php" class="btn">Upload Your Data Now</a>
         </div>
     </div>
-    <!-- <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Market Databank. All rights reserved.</p>
-            <p>Follow us on 
-                <a href="#">Twitter</a>, 
-                <a href="#">Facebook</a>, 
-                <a href="#">LinkedIn</a>
-            </p>
-        </div>
-    </footer> -->
+    
     <footer class="footer">
   <div class="footer-container">
     <!-- Left Column -->
@@ -398,29 +380,6 @@
     </p>
   </div>
 </footer>
-
-
-    <!-- <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Login/Signup</h2>
-                <span class="close">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form id="loginForm">
-                    <input type="text" id="email" placeholder="Username" required>
-                    <input type="password" placeholder="Password" required>
-                    <button type="submit">Login</button>
-                </form>
-                <hr>
-                <div class="social-login">
-                    <div class="g-signin2" data-onsuccess="onGoogleSignIn" data-theme="dark"></div>
-                    
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Chatbot Icon -->
 <div id="chat-icon" onclick="toggleChat()">
     💬
 </div>

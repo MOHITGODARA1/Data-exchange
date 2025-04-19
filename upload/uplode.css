@@ -1,4 +1,4 @@
-/* Reset and base styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,6 @@
     line-height: 1.6;
   }
   
-  /* Navbar */
   .navbar {
     background-color: #ffffff;
     padding: 20px 40px;
@@ -39,7 +38,6 @@
     font-weight: 500;
   }
   
-  /* Upload Section */
   .upload-section {
     max-width: 600px;
     margin: 50px auto;
@@ -60,7 +58,6 @@
     margin-bottom: 30px;
   }
   
-  /* Form styles */
   form label {
     display: block;
     margin-top: 20px;
@@ -122,7 +119,6 @@
     background-color: #2563eb;
   }
   
-  /* Data Bank Section */
   .data-bank-info {
     max-width: 600px;
     margin: 50px auto;

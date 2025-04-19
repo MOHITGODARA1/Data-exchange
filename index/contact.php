@@ -36,7 +36,6 @@ nav {
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-start;
-    /* background-color: #1a202c; */
     padding: 1rem;
     width: 77%;
     height: 100%;
@@ -292,12 +291,11 @@ nav {
   
 <script>
   document.getElementById("feedbackForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault(); 
 
     const form = event.target;
     const formData = new FormData(form);
 
-    // Send the form data using fetch
     fetch(form.action, {
       method: "POST",
       body: formData,
@@ -307,7 +305,7 @@ nav {
         if (data.status === "success") {
           // Show success popup
           alert(data.message);
-          form.reset(); // Clear the form
+          form.reset(); 
         } else {
           // Show error message
           alert("Error: " + data.message);

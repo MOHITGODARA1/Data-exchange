@@ -105,8 +105,8 @@
  
  .data-list {
    display: flex;
-   flex-direction: column; /* Stack items vertically */
-   gap: 20px; /* Add spacing between items */
+   flex-direction: column; 
+   gap: 20px;
    margin-top: 20px;
  }
  
@@ -148,22 +148,21 @@
  
  .data-card a:hover {
    background: #2563eb;
- }/* Style for the search bar */
+ }
 #searchBar {
-   width: 100%; /* Full width */
-   max-width: 500px; /* Limit the maximum width */
-   padding: 10px 15px; /* Add padding for better appearance */
-   margin: 20px auto; /* Center the search bar and add spacing */
-   display: block; /* Ensure it behaves like a block element */
-   border: 1px solid #d1d5db; /* Light gray border */
-   border-radius: 8px; /* Rounded corners */
-   font-size: 1rem; /* Adjust font size */
-   outline: none; /* Remove outline on focus */
-   transition: border-color 0.3s ease; /* Smooth transition for border color */
+   width: 100%; 
+   max-width: 500px; 
+   padding: 10px 15px;
+   margin: 20px auto; 
+   display: block;
+   border: 1px solid #d1d5db; 
+   border-radius: 8px; 
+   font-size: 1rem;
+   outline: none; 
+   transition: border-color 0.3s ease; 
  }
  
- /* Add focus effect */
  #searchBar:focus {
-   border-color: #3b82f6; /* Change border color to blue on focus */
-   box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); /* Add a subtle shadow */
+   border-color: #3b82f6; 
+   box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); 
  }

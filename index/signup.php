@@ -1,16 +1,15 @@
-<!-- filepath: d:\FULL stack\htdocs\Class project\index\signup.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <meta name="google-signin-client_id" content="654211061514-midk24g4o2rog224bv6t45t5qctf665l.apps.googleusercontent.com"> <!-- Replace with your Google Client ID -->
+    <link rel="stylesheet" href="styles.css"> 
+    <meta name="google-signin-client_id" content="654211061514-midk24g4o2rog224bv6t45t5qctf665l.apps.googleusercontent.com"> 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     <style>
-      /* General Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -95,9 +94,9 @@ hr {
     border-radius: 4px;
 }
 .g-signin2 {
-        width: 100% !important; /* Set the width to 100% */
-        display: block; /* Ensure it behaves like a block element */
-        text-align: center; /* Center the content inside the button */
+        width: 100% !important; 
+        display: block; 
+        text-align: center; 
     }
 p {
     margin-top: 15px;
@@ -149,15 +148,13 @@ p a:hover {
          <p>Already have an account? <a href="loginpage.php">Login here</a></p>
 
     <script>
-        // Handle Signup Form Submission
         document.getElementById('signupForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault();
 
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // Send the signup data to the server
             fetch('save_user.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -167,7 +164,7 @@ p a:hover {
                 .then((data) => {
                     if (data.status === 'success') {
                         alert('Signup successful!');
-                        window.location.href = 'loginpage.php'; // Redirect to the login page
+                        window.location.href = 'loginpage.php'; 
                     } else {
                         alert('Signup failed. Please try again.');
                     }
@@ -175,7 +172,6 @@ p a:hover {
                 .catch((error) => console.error('Error:', error));
         });
 
-        // Google Login
         function onGoogleSignIn(googleUser) {
             const profile = googleUser.getBasicProfile();
             const userData = {
@@ -185,7 +181,6 @@ p a:hover {
                 image: profile.getImageUrl(),
             };
 
-            // Send user data to the server
             fetch('save_user.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -195,7 +190,7 @@ p a:hover {
                 .then((data) => {
                     if (data.status === 'success') {
                         alert('Google signup/login successful!');
-                        window.location.href = 'index.php'; // Redirect to the homepage
+                        window.location.href = 'index.php'; 
                     } else {
                         alert('Failed to save user data.');
                     }
@@ -203,12 +198,11 @@ p a:hover {
                 .catch((error) => console.error('Error:', error));
         }
 
-        // Facebook Login
         function checkFacebookLoginState() {
             FB.getLoginStatus(function (response) {
                 if (response.status === 'connected') {
                     FB.api('/me', { fields: 'id,name,email,picture' }, function (userData) {
-                        // Send user data to the server
+                       
                         fetch('save_user.php', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
@@ -218,7 +212,7 @@ p a:hover {
                             .then((data) => {
                                 if (data.status === 'success') {
                                     alert('Facebook signup/login successful!');
-                                    window.location.href = 'index.php'; // Redirect to the homepage
+                                    window.location.href = 'index.php'; 
                                 } else {
                                     alert('Failed to save user data.');
                                 }
@@ -230,15 +224,13 @@ p a:hover {
                 }
             });
         }
-    // Handle Signup Form Submission
     document.getElementById('signupForm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault(); 
 
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
-        // Send the signup data to the server
         fetch('save_user.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -248,9 +240,9 @@ p a:hover {
             .then((data) => {
                 if (data.status === 'success') {
                     alert('Signup successful!');
-                    window.location.href = 'loginpage.php'; // Redirect to the login page
+                    window.location.href = 'loginpage.php';
                 } else {
-                    alert(data.message); // Show error message
+                    alert(data.message); 
                 }
             })
             .catch((error) => console.error('Error:', error));
@@ -264,7 +256,6 @@ p a:hover {
             image: profile.getImageUrl(),
         };
     
-        // Send user data to the server
         fetch('google_login.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -274,7 +265,7 @@ p a:hover {
             .then((data) => {
                 if (data.status === 'success') {
                     alert('Google login successful!');
-                    window.location.href = 'index.php'; // Redirect to the homepage
+                    window.location.href = 'index.php'; 
                 } else {
                     alert('Failed to log in with Google.');
                 }

@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css"> 
     <style>
-      /* General Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -110,7 +109,7 @@ hr {
     <script>
     // Handle Login Form Submission
     document.getElementById('loginForm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
@@ -141,7 +140,7 @@ hr {
             });
     });
     document.getElementById('loginForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
@@ -161,9 +160,9 @@ hr {
         .then((data) => {
             if (data.status === 'success') {
                 alert('Login successful!');
-                window.location.href = 'index.php'; // Redirect to the homepage
+                window.location.href = 'index.php'; 
             } else {
-                alert(data.message); // Show error message
+                alert(data.message); 
             }
         })
         .catch((error) => {

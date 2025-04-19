@@ -1,7 +1,4 @@
 <?php
-// filepath: d:\FULL stack\htdocs\Class project\index\save_user.php
-
-// Enable error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -9,7 +6,7 @@ ini_set('display_errors', 1);
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "userinformation"; // Replace with your database name
+$dbname = "userinformation"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

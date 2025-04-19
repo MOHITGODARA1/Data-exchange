@@ -108,7 +108,7 @@ function toggleChat() {
 
 // Handle Form Submission
 document.getElementById("chat-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form from refreshing the page
+    event.preventDefault(); 
 
     const userInput = document.getElementById("user-input").value;
     const chatBox = document.getElementById("chat-box");
@@ -120,13 +120,13 @@ document.getElementById("chat-form").addEventListener("submit", function (event)
 
     // Send message to server using AJAX
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "chatbot.php", true); // Send request to chatbot.php
+    xhr.open("POST", "chatbot.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             // Append bot response to chat box
             chatBox.innerHTML += `<div class="bot-response">Bot: ${xhr.responseText}</div>`;
-            chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
+            chatBox.scrollTop = chatBox.scrollHeight; 
         }
     };
     xhr.send("message=" + encodeURIComponent(userInput));
