@@ -1,28 +1,38 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const divs = document.querySelectorAll(".full-width-div");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            } else {
-                entry.target.classList.remove("visible"); // Remove the class when out of view
-            }
-        });
+const data = [
+    { title: "Project Report", desc: "Final year report for data storage system." },
+    { title: "Game Analytics", desc: "Metrics gathered from player achievements." },
+    { title: "Survey Results", desc: "Collected data from user feedback." },
+    { title: "Demo Upload", desc: "Sample file to demonstrate system." }
+  ];
+  
+  const dataList = document.getElementById("dataList");
+  const searchInput = document.getElementById("search");
+  
+  function renderData(items) {
+    dataList.innerHTML = "";
+    items.forEach(item => {
+      dataList.innerHTML += `
+        <div class="data-card">
+          <div class="info">
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+          </div>
+          <div class="actions">
+            <button onclick="alert('Diving into ${item.title}')">Dive In</button>
+            <button onclick="alert('Sharing ${item.title}')">Share</button>
+          </div>
+        </div>
+      `;
     });
-
-    divs.forEach((div) => observer.observe(div));
-});
-function filterDivs() {
-    const searchInput = document.getElementById("search-bar").value.toLowerCase();
-    const divs = document.querySelectorAll(".full-width-div");
-
-    divs.forEach((div) => {
-        const companyName = div.getAttribute("data-name").toLowerCase();
-        if (companyName.includes(searchInput)) {
-            div.classList.remove("hidden"); // Show matching divs
-        } else {
-            div.classList.add("hidden"); // Hide non-matching divs
-        }
-    });
-}
+  }
+  
+  searchInput.addEventListener("input", () => {
+    const value = searchInput.value.toLowerCase();
+    const filtered = data.filter(item =>
+      item.title.toLowerCase().includes(value) || item.desc.toLowerCase().includes(value)
+    );
+    renderData(filtered);
+  });
+  
+  renderData(data);
+  

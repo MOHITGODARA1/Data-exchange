@@ -1,109 +1,169 @@
-/* .full-width-div {
-   width: 90%; 
-   height: 200px;
-   margin: 10px auto; 
-   background-color: lightgray; 
-   border-radius: 8px; 
-   transform: scale(0.8);
-   transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
-   cursor: pointer;
-} */
-
-.full-width-div.visible {
-   opacity: 1; /* Fully visible */
-   transform: scale(1); /* Pop to full size */
-}
- .full-width-div:hover {
-   background-color: #e2e8f0;
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
  }
- .full-width-div {
-   display: block; /* Show all divs by default */
-   opacity: 1; /* Fully visible */
-   transform: scale(1);
-   width: 90%; /* Keep the width at 90% of the window */
-   height: 300px; /* Increase the height to 300px */
-   margin: 10px auto; /* Center the div horizontally and add vertical spacing */
-   background-color: lightgray; /* Optional: Add a background color for visibility */
-   border-radius: 8px; /* Optional: Add rounded corners */
-   padding: 20px; /* Add padding for better spacing inside the div */
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-   transform: scale(0.8);
-   transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
-   cursor: pointer;
-}
-/* Search Bar Styling */
-.search-bar-container {
-   background: linear-gradient(to right, #5781ad, #00c6ff); 
+ 
+ body {
+   font-family: Arial, sans-serif;
+   background: #1e293b;
+   color: #fff;
+ }
+ 
+ .container {
+   display: flex;
+   height: 100vh;
+ }
+ 
+ .sidebar {
+   width: 200px;
+   background: #0f172a;
    padding: 20px;
-   height: 300px;
-   border-bottom-left-radius: 15px; /* Curved bottom border */
-   border-bottom-right-radius: 15px; /* Curved bottom border */
-   text-align: center;
-}
-.EX{
-      margin-top: 10px; /* Add spacing above the text */
-      font-size: 36px; /* Adjust font size */
-      font-weight: bold; /* Make the text bold */
-      color: #333; /* Set the text color */
-      text-align: center; /* Center the text */
-      text-transform: uppercase; /* Optional: Make the text uppercase */
-      line-height: 1.5; /* Improve readability */
-  
-}
-#search-bar {
-   width: 50%; /* Centered and responsive width */
+ }
+ 
+ .sidebar .logo {
+   color: #60a5fa;
+   font-size: 24px;
+   margin-bottom: 40px;
+ }
+ 
+ .sidebar ul {
+   list-style: none;
+ }
+ 
+ .sidebar li a{
+   margin: 20px 0;
+   text-decoration: none;
    padding: 10px;
-   font-size: 16px;
-   border: 1px solid #ccc;
-   border-radius: 8px; /* Rounded corners */
-   outline: none;
-   transition: border-color 0.3s ease;
-}
-
-#search-bar:focus {
-   border-color: #007bff; /* Blue border on focus */
-}
-
-/* Hide divs by default when filtered */
-/* .full-width-div {
-   display: none; 
-} */
-
-.full-width-div.hidden {
-   display: none; /* Hide divs that do not match the search */
-}
-.action-button {
+   color: #cbd5e1;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+ }
+ 
+ .sidebar li span {
+   margin-right: 10px;
+ }
+ 
+ .sidebar li.active, .sidebar li:hover {
+   background: #1e3a8a;
+   border-radius: 8px;
+ }
+ 
+ .main {
+   flex: 1;
+   padding: 30px;
+   background: #f8fafc;
+   color: #0f172a;
+   overflow-y: auto;
+ }
+ 
+ .main h1 {
+   margin-bottom: 20px;
+ }
+ 
+ #search {
+   width: 100%;
+   padding: 12px;
+   border-radius: 8px;
+   border: 1px solid #cbd5e1;
+   margin-bottom: 20px;
+ }
+ 
+ .data-card {
+   background: #fff;
+   padding: 20px;
+   border-radius: 12px;
+   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+   margin-bottom: 15px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ 
+ .data-card .info {
+   max-width: 70%;
+ }
+ 
+ .data-card h3 {
+   margin-bottom: 8px;
+ }
+ 
+ .data-card .actions button {
+   background: #3b82f6;
+   color: #fff;
+   border: none;
+   padding: 10px 14px;
+   border-radius: 8px;
+   margin-left: 8px;
+   cursor: pointer;
+ }
+ 
+ .data-card .actions button:hover {
+   background: #2563eb;
+ }
+ 
+ .data-list {
+   display: flex;
+   flex-direction: column; /* Stack items vertically */
+   gap: 20px; /* Add spacing between items */
+   margin-top: 20px;
+ }
+ 
+ .data-card {
+   background: #f1f5f9;
+   border: 1px solid #e2e8f0;
+   border-radius: 8px;
+   padding: 20px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+ 
+ .data-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+ }
+ 
+ .data-card h1 {
+   font-size: 1.5rem;
+   color: #1f2937;
+   margin-bottom: 10px;
+ }
+ 
+ .data-card p {
+   font-size: 1rem;
+   color: #4b5563;
+   margin-bottom: 15px;
+ }
+ 
+ .data-card a {
    display: inline-block;
-   margin-top: 10px; /* Add spacing above the button */
-   padding: 10px 20px; /* Add padding inside the button */
-   background-color: #007bff; /* Button background color */
-   margin-top: 60px;
-   color: white; /* Button text color */
-   border: none; /* Remove border */
-   border-radius: 5px; /* Add rounded corners */
-   font-size: 16px; /* Set font size */
-   cursor: pointer; /* Change cursor to pointer */
-   transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-.action-button:hover {
-   background-color: #0056b3; /* Darker blue on hover */
-}
-
-.full-width-div.visible {
-   opacity: 1; /* Fully visible */
-   transform: scale(1); /* Pop to full size */
-}
-
-h1 {
-   font-size: 24px; /* Set the font size for h1 */
-   font-weight: bold; /* Make the text bold */
-   color: #333; /* Set the text color */
-   margin-bottom: 10px; /* Add spacing below the h1 */
-}
-
-p {
-   font-size: 16px; /* Set the font size for paragraphs */
-   color: #555; /* Set the text color for paragraphs */
-   line-height: 1.5; /* Improve readability with line height */
-}
+   padding: 10px 15px;
+   background: #3b82f6;
+   color: #fff;
+   text-decoration: none;
+   border-radius: 4px;
+   transition: background-color 0.3s ease;
+ }
+ 
+ .data-card a:hover {
+   background: #2563eb;
+ }/* Style for the search bar */
+#searchBar {
+   width: 100%; /* Full width */
+   max-width: 500px; /* Limit the maximum width */
+   padding: 10px 15px; /* Add padding for better appearance */
+   margin: 20px auto; /* Center the search bar and add spacing */
+   display: block; /* Ensure it behaves like a block element */
+   border: 1px solid #d1d5db; /* Light gray border */
+   border-radius: 8px; /* Rounded corners */
+   font-size: 1rem; /* Adjust font size */
+   outline: none; /* Remove outline on focus */
+   transition: border-color 0.3s ease; /* Smooth transition for border color */
+ }
+ 
+ /* Add focus effect */
+ #searchBar:focus {
+   border-color: #3b82f6; /* Change border color to blue on focus */
+   box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); /* Add a subtle shadow */
+ }
